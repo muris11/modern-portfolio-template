@@ -1,6 +1,6 @@
 # Portfolio Template
 
-![Portfolio Template](img/placeholder/hero.jpg)  
+![Portfolio Template]https://muris11.github.io/modern-portfolio-template/  
 
 Template portofolio modern berbasis **HTML, CSS, Bootstrap 5, dan JavaScript**.  
 Dirancang untuk **developer, desainer, freelancer, atau siapa saja** yang ingin menampilkan karya dan profil secara profesional. Template ini **responsif**, siap pakai, dan mudah dikustomisasi.
