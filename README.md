@@ -54,9 +54,9 @@ Salin kode
    git clone https://github.com/username/portfolio-template.git
 Ganti Nama & Foto Profil
 
-Ubah di index.html (Hero Section).
+Edit index.html (Hero Section) untuk nama & profesi.
 
-Ubah di about.html (Foto profil & deskripsi).
+Edit about.html untuk foto profil & deskripsi.
 
 Update Data Proyek
 
@@ -66,13 +66,13 @@ Tambahkan atau edit proyek sesuai kebutuhan.
 
 Kustomisasi Skills
 
-Ubah di about.html dan Skills Section.
+Ubah di about.html dan bagian Skills Section.
 
 Ganti Gambar
 
 Simpan gambar baru di folder img/placeholder/.
 
-Pastikan nama file sama atau ubah path di HTML.
+Pastikan nama file sama atau ubah path di HTML/JS.
 
 Kustomisasi CSS
 
@@ -145,6 +145,6 @@ Salin kode
 
 ---
 
-Kalau kamu mau, aku juga bisa buatkan **versi folder template lengkap siap pakai**, dengan 3 proyek default, foto placeholder, dan script JS siap jalan, supaya tinggal di-upload ke GitHub.  
+Kalau mau, aku bisa sekalian buatkan **versi folder template lengkap siap pakai**, termasuk **3 proyek default, foto placeholder, dan script JS siap jalan**, sehingga tinggal di-upload ke GitHub.  
 
 Apakah mau aku buatkan versi lengkap itu juga?
