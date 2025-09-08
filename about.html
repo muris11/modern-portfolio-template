@@ -15,24 +15,7 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <<a class="navbar-brand fw-bold" href="index.html">Rifqy</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">Tentang</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
-        </ul>
-      </div>
-      <button id="theme-toggle" class="btn btn-outline-light ms-3"><i class="fas fa-moon"></i></button>
-    </div>
-  </nav>
+  <div id="navbar"></div>
 
   <!-- Tentang Saya -->
   <section class="py-5 mt-5">
@@ -74,15 +57,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2025 Rifqy Saputra. Semua Hak Dilindungi.</p>
-    <div>
-      <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
-      <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
-      <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
+  <div id="footer"></div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -90,6 +65,7 @@
   <script>
     AOS.init();
   </script>
+  <script src="js/components.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/theme.js"></script>
 </body>

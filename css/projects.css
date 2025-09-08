@@ -1,0 +1,48 @@
+.project-card {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+#searchProjects {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#filterProjects {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.modal-content {
+  border-radius: 1rem;
+}
+
+.modal-body img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+#projectTech .tech-tag {
+  background-color: #e9ecef;
+  color: #495057;
+}

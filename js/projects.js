@@ -7,236 +7,378 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectDescription = document.getElementById("projectDescription");
   const projectLink = document.getElementById("projectLink");
 
-  // Data project (20 total)
-  const projects = {
-    1: {
+  // Data proyek
+  const projects = [
+    {
+      id: 1,
+      title: "Website Portfolio",
+      category: "web",
+      description:
+        "Website portfolio personal menggunakan HTML, CSS, dan JavaScript.",
+      image: "images/projects/portfolio.jpg",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      link: "https://example.com/portfolio",
+    },
+    {
+      id: 2,
       title: "Sistem Informasi Peminjaman Barang",
-      img: "https://picsum.photos/600/400?random=1",
-      desc: "Sistem informasi berbasis web untuk mengelola peminjaman barang di kampus dengan fitur CRUD, validasi form, dan otentikasi multi-role.",
+      category: "web",
+      description:
+        "Sistem informasi berbasis web untuk mengelola peminjaman barang di kampus dengan fitur CRUD, validasi form, dan otentikasi multi-role.",
+      image: "https://picsum.photos/600/400?random=1",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    2: {
+    {
+      id: 3,
       title: "SIKC (Smart City Competition)",
-      img: "https://picsum.photos/600/400?random=2",
-      desc: "Platform internal kompetisi berbasis web yang mendukung pendaftaran, pengelolaan peserta, penilaian, dan statistik laporan.",
+      category: "web",
+      description:
+        "Platform internal kompetisi berbasis web yang mendukung pendaftaran, pengelolaan peserta, penilaian, dan statistik laporan.",
+      image: "https://picsum.photos/600/400?random=2",
+      technologies: ["HTML", "CSS", "JavaScript", "Laravel", "MySQL"],
       link: "#",
     },
-    3: {
+    {
+      id: 4,
       title: "Penetration Testing Dashboard",
-      img: "https://picsum.photos/600/400?random=3",
-      desc: "Dashboard untuk mendokumentasikan hasil pengujian keamanan (Gray, Black, White Box Testing) terhadap aplikasi berbasis web.",
+      category: "web",
+      description:
+        "Dashboard untuk mendokumentasikan hasil pengujian keamanan (Gray, Black, White Box Testing) terhadap aplikasi berbasis web.",
+      image: "https://picsum.photos/600/400?random=3",
+      technologies: ["HTML", "CSS", "JavaScript", "Django", "Python"],
       link: "#",
     },
-    4: {
+    {
+      id: 5,
       title: "Task Manager App",
-      img: "https://picsum.photos/600/400?random=4",
-      desc: "Aplikasi pencatat tugas dengan login, Google sign-in, dan Firebase database. Dibuat dengan Flutter.",
+      category: "mobile",
+      description:
+        "Aplikasi pencatat tugas dengan login, Google sign-in, dan Firebase database. Dibuat dengan Flutter.",
+      image: "https://picsum.photos/600/400?random=4",
+      technologies: ["Dart", "Flutter", "Firebase"],
       link: "#",
     },
-    5: {
+    {
+      id: 6,
       title: "Portfolio Website",
-      img: "https://picsum.photos/600/400?random=5",
-      desc: "Website personal dengan navigasi dinamis, dark/light mode, dan halaman responsive.",
+      category: "web",
+      description:
+        "Website personal dengan navigasi dinamis, dark/light mode, dan halaman responsive.",
+      image: "https://picsum.photos/600/400?random=5",
+      technologies: ["HTML", "CSS", "JavaScript"],
       link: "#",
     },
-    6: {
+    {
+      id: 7,
       title: "E-Voting System",
-      img: "https://picsum.photos/600/400?random=6",
-      desc: "Aplikasi voting online berbasis web dengan keamanan OTP dan rekap hasil real-time.",
+      category: "web",
+      description:
+        "Aplikasi voting online berbasis web dengan keamanan OTP dan rekap hasil real-time.",
+      image: "https://picsum.photos/600/400?random=6",
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
       link: "#",
     },
-    7: {
+    {
+      id: 8,
       title: "Smart Parking IoT",
-      img: "https://picsum.photos/600/400?random=7",
-      desc: "Prototype IoT parkir pintar dengan ESP32, sensor ultrasonik, dan notifikasi via mobile app.",
+      category: "iot",
+      description:
+        "Prototype IoT parkir pintar dengan ESP32, sensor ultrasonik, dan notifikasi via mobile app.",
+      image: "https://picsum.photos/600/400?random=7",
+      technologies: ["ESP32", "Ultrasonic Sensor", "MQTT", "Node-RED"],
       link: "#",
     },
-    8: {
+    {
+      id: 9,
       title: "Chatbot AI",
-      img: "https://picsum.photos/600/400?random=8",
-      desc: "Chatbot berbasis NLP dengan Python Flask untuk layanan informasi mahasiswa.",
+      category: "ai",
+      description:
+        "Chatbot berbasis NLP dengan Python Flask untuk layanan informasi mahasiswa.",
+      image: "https://picsum.photos/600/400?random=8",
+      technologies: ["Python", "Flask", "NLTK", "TensorFlow"],
       link: "#",
     },
-    9: {
+    {
+      id: 10,
       title: "Smart City Dashboard",
-      img: "https://picsum.photos/600/400?random=9",
-      desc: "Dashboard analitik data kota cerdas, menampilkan data IoT, transportasi, dan lingkungan.",
+      category: "web",
+      description:
+        "Dashboard analitik data kota cerdas, menampilkan data IoT, transportasi, dan lingkungan.",
+      image: "https://picsum.photos/600/400?random=9",
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
       link: "#",
     },
-    10: {
+    {
+      id: 11,
       title: "Music App 'Rifqyfy'",
-      img: "https://picsum.photos/600/400?random=10",
-      desc: "Aplikasi streaming musik seperti Spotify dengan playlist pribadi dan rekomendasi lagu.",
+      category: "mobile",
+      description:
+        "Aplikasi streaming musik seperti Spotify dengan playlist pribadi dan rekomendasi lagu.",
+      image: "https://picsum.photos/600/400?random=10",
+      technologies: ["Dart", "Flutter", "Firebase"],
       link: "#",
     },
-    11: {
+    {
+      id: 12,
       title: "Online Learning Platform",
-      img: "https://picsum.photos/600/400?random=11",
-      desc: "Platform pembelajaran online dengan fitur kelas virtual, forum diskusi, dan kuis interaktif.",
+      category: "web",
+      description:
+        "Platform pembelajaran online dengan fitur kelas virtual, forum diskusi, dan kuis interaktif.",
+      image: "https://picsum.photos/600/400?random=11",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    12: {
+    {
+      id: 13,
       title: "Weather Forecast App",
-      img: "https://picsum.photos/600/400?random=12",
-      desc: "Aplikasi mobile prediksi cuaca real-time menggunakan API eksternal dengan UI modern.",
+      category: "mobile",
+      description:
+        "Aplikasi mobile prediksi cuaca real-time menggunakan API eksternal dengan UI modern.",
+      image: "https://picsum.photos/600/400?random=12",
+      technologies: ["Dart", "Flutter", "API"],
       link: "#",
     },
-    13: {
+    {
+      id: 14,
       title: "E-Commerce Website",
-      img: "https://picsum.photos/600/400?random=13",
-      desc: "Website toko online dengan keranjang belanja, pembayaran online, dan dashboard admin.",
+      category: "web",
+      description:
+        "Website toko online dengan keranjang belanja, pembayaran online, dan dashboard admin.",
+      image: "https://picsum.photos/600/400?random=13",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    14: {
+    {
+      id: 15,
       title: "Smart Home IoT",
-      img: "https://picsum.photos/600/400?random=14",
-      desc: "Prototype rumah pintar dengan kontrol lampu dan sensor suhu berbasis ESP32 dan MQTT.",
+      category: "iot",
+      description:
+        "Prototype rumah pintar dengan kontrol lampu dan sensor suhu berbasis ESP32 dan MQTT.",
+      image: "https://picsum.photos/600/400?random=14",
+      technologies: ["ESP32", "MQTT", "Node-RED"],
       link: "#",
     },
-    15: {
+    {
+      id: 16,
       title: "Library Management System",
-      img: "https://picsum.photos/600/400?random=15",
-      desc: "Sistem manajemen perpustakaan untuk mengelola peminjaman, pengembalian, dan katalog buku.",
+      category: "web",
+      description:
+        "Sistem manajemen perpustakaan untuk mengelola peminjaman, pengembalian, dan katalog buku.",
+      image: "https://picsum.photos/600/400?random=15",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    16: {
+    {
+      id: 17,
       title: "Machine Learning Fraud Detection",
-      img: "https://picsum.photos/600/400?random=16",
-      desc: "Model machine learning untuk mendeteksi transaksi keuangan mencurigakan.",
+      category: "ai",
+      description:
+        "Model machine learning untuk mendeteksi transaksi keuangan mencurigakan.",
+      image: "https://picsum.photos/600/400?random=16",
+      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy"],
       link: "#",
     },
-    17: {
+    {
+      id: 18,
       title: "Mobile Banking App UI",
-      img: "https://picsum.photos/600/400?random=17",
-      desc: "Prototype aplikasi mobile banking dengan keamanan fingerprint login dan UI clean.",
+      category: "mobile",
+      description:
+        "Prototype aplikasi mobile banking dengan keamanan fingerprint login dan UI clean.",
+      image: "https://picsum.photos/600/400?random=17",
+      technologies: ["Dart", "Flutter"],
       link: "#",
     },
-    18: {
+    {
+      id: 19,
       title: "Blog CMS",
-      img: "https://picsum.photos/600/400?random=18",
-      desc: "Content Management System sederhana untuk membuat dan mengelola posting blog.",
+      category: "web",
+      description:
+        "Content Management System sederhana untuk membuat dan mengelola posting blog.",
+      image: "https://picsum.photos/600/400?random=18",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    19: {
+    {
+      id: 20,
       title: "Online Exam System",
-      img: "https://picsum.photos/600/400?random=19",
-      desc: "Sistem ujian online dengan randomisasi soal, timer, dan rekap hasil otomatis.",
+      category: "web",
+      description:
+        "Sistem ujian online dengan randomisasi soal, timer, dan rekap hasil otomatis.",
+      image: "https://picsum.photos/600/400?random=19",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       link: "#",
     },
-    20: {
+    {
+      id: 21,
       title: "Healthcare Monitoring IoT",
-      img: "https://picsum.photos/600/400?random=20",
-      desc: "IoT monitoring kesehatan pasien dengan sensor detak jantung dan suhu tubuh.",
+      category: "iot",
+      description:
+        "IoT monitoring kesehatan pasien dengan sensor detak jantung dan suhu tubuh.",
+      image: "https://picsum.photos/600/400?random=20",
+      technologies: ["ESP32", "MQTT", "Node-RED"],
       link: "#",
     },
-  };
+  ];
 
-  // Generate card dari data
-  Object.entries(projects).forEach(([id, project]) => {
-    const col = document.createElement("div");
-    col.className = "col-md-4";
+  // DOM Elements
+  const searchInput = document.getElementById("searchProjects");
+  const filterSelect = document.getElementById("filterProjects");
 
-    col.innerHTML = `
-      <div class="card h-100 shadow-sm project-card" data-project="${id}">
-        <img src="${project.img}" class="card-img-top" alt="${project.title}">
-        <div class="card-body">
-          <h5 class="card-title">${project.title}</h5>
-          <p class="card-text text-muted">${project.desc.substring(
-            0,
-            80
-          )}...</p>
-        </div>
-      </div>
-    `;
+  // Event Listeners
+  searchInput.addEventListener("input", filterProjects);
+  filterSelect.addEventListener("change", filterProjects);
 
-    projectsContainer.appendChild(col);
-  });
+  // Filter projects based on search and category
+  function filterProjects() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCategory = filterSelect.value;
 
-  // Event klik card
-  document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const projectId = card.dataset.project;
-      const project = projects[projectId];
+    const filteredProjects = projects.filter((project) => {
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchTerm) ||
+        project.description.toLowerCase().includes(searchTerm);
+      const matchesCategory =
+        selectedCategory === "all" || project.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
 
-      if (project) {
-        projectTitle.textContent = project.title;
-        projectImage.src = project.img;
-        projectImage.alt = project.title;
-        projectDescription.textContent = project.desc;
+    displayProjects(filteredProjects);
+  }
 
-        if (project.link) {
-          projectLink.classList.remove("d-none");
-          projectLink.href = project.link;
-        } else {
-          projectLink.classList.add("d-none");
+  // Display projects in the container
+  function displayProjects(projectsToShow) {
+    try {
+      if (!projectsContainer) {
+        console.error("Projects container not found");
+        return;
+      }
+
+      projectsContainer.innerHTML = projectsToShow.length
+        ? ""
+        : '<div class="col-12 text-center"><p>Tidak ada proyek yang ditemukan</p></div>';
+
+      if (projectsToShow.length === 0) return;
+
+      projectsToShow.forEach((project) => {
+        if (!project.title || !project.description) {
+          console.warn("Invalid project data:", project);
+          return;
         }
 
-        modal.show();
+        const card = document.createElement("div");
+        card.className = "col-md-6 col-lg-4";
+        card.innerHTML = `
+                <div class="card h-100 project-card" data-project-id="${
+                  project.id
+                }">
+                    <img src="${
+                      project.image
+                    }" class="card-img-top project-image" alt="${
+          project.title
+        }">
+                    <div class="card-body">
+                        <h5 class="card-title">${project.title}</h5>
+                        <p class="card-text text-muted">${project.description.substring(
+                          0,
+                          100
+                        )}...</p>
+                        <div class="mt-2">
+                            ${project.technologies
+                              .map(
+                                (tech) =>
+                                  `<span class="tech-tag">${tech}</span>`
+                              )
+                              .join("")}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        card
+          .querySelector(".project-card")
+          .addEventListener("click", () => showProjectDetails(project));
+        projectsContainer.appendChild(card);
+      });
+    } catch (error) {
+      console.error("Error displaying projects:", error);
+    }
+  }
+
+  // Show project details in modal
+  function showProjectDetails(project) {
+    try {
+      if (!project) {
+        console.error("No project data provided");
+        return;
       }
-    });
-  });
-});
-// Daftar semua proyek
-const projects = [
-  {
-    title: "Sistem Informasi Peminjaman Barang",
-    description: "Aplikasi web untuk memanajemen peminjaman barang di kampus.",
-    image: "https://picsum.photos/600/400?random=1",
-    link: "https://github.com/rifqy/project-peminjaman"
-  },
-  {
-    title: "Website Portofolio",
-    description: "Website portofolio pribadi dengan Bootstrap & AOS Animation.",
-    image: "https://picsum.photos/600/400?random=2",
-    link: "https://github.com/rifqy/portfolio"
-  },
-  {
-    title: "Aplikasi Flutter QTask",
-    description: "Task manager mobile app dengan Flutter & Firebase.",
-    image: "https://picsum.photos/600/400?random=3",
-    link: "https://github.com/rifqy/qtask"
-  },
-  {
-    title: "Penetration Testing Report",
-    description: "Laporan uji keamanan web menggunakan metode Gray Box.",
-    image: "https://picsum.photos/600/400?random=4",
-    link: "https://github.com/rifqy/security-report"
+
+      const modalElement = document.getElementById("projectModal");
+      if (!modalElement) {
+        console.error("Modal element not found");
+        return;
+      }
+
+      // Update modal content
+      const elements = {
+        title: document.getElementById("projectTitle"),
+        description: document.getElementById("projectDescription"),
+        image: document.getElementById("projectImage"),
+        category: document.getElementById("projectCategory"),
+        link: document.getElementById("projectLink"),
+        tech: document.getElementById("projectTech"),
+      };
+
+      // Verify all elements exist
+      for (const [key, element] of Object.entries(elements)) {
+        if (!element) {
+          console.error(`Modal ${key} element not found`);
+          return;
+        }
+      }
+
+      elements.title.textContent = project.title;
+      elements.description.textContent = project.description;
+      elements.image.src = project.image || "";
+      elements.image.alt = project.title;
+      elements.category.textContent = getCategoryLabel(project.category);
+
+      if (project.link) {
+        elements.link.href = project.link;
+        elements.link.classList.remove("d-none");
+      } else {
+        elements.link.classList.add("d-none");
+      }
+
+      elements.tech.innerHTML = project.technologies
+        ? project.technologies
+            .map((tech) => `<span class="tech-tag">${tech}</span>`)
+            .join("")
+        : "";
+
+      new bootstrap.Modal(modalElement).show();
+    } catch (error) {
+      console.error("Error showing project details:", error);
+    }
   }
-];
 
-// Container daftar project
-const projectList = document.getElementById("project-list");
-
-// Render hanya 3 proyek pertama di index.html
-projects.slice(0, 3).forEach((project, index) => {
-  const col = document.createElement("div");
-  col.className = "col-md-4";
-  col.innerHTML = `
-    <div class="card h-100 shadow-sm">
-      <img src="${project.image}" class="card-img-top" alt="${project.title}">
-      <div class="card-body">
-        <h5 class="card-title">${project.title}</h5>
-        <p class="card-text">${project.description}</p>
-        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#projectModal"
-          onclick="showProject(${index})">Lihat Detail</button>
-      </div>
-    </div>
-  `;
-  projectList.appendChild(col);
-});
-
-// Function modal untuk detail project
-function showProject(index) {
-  const project = projects[index];
-  document.getElementById("projectImage").src = project.image;
-  document.getElementById("projectTitle").textContent = project.title;
-  document.getElementById("projectDescription").textContent = project.description;
-
-  const linkBtn = document.getElementById("projectLink");
-  if (project.link) {
-    linkBtn.href = project.link;
-    linkBtn.classList.remove("d-none");
-  } else {
-    linkBtn.classList.add("d-none");
+  // Get category label in Indonesian
+  function getCategoryLabel(category) {
+    const categories = {
+      web: "Pengembangan Web",
+      mobile: "Aplikasi Mobile",
+      other: "Lainnya",
+    };
+    return categories[category] || category;
   }
-}
+
+  // Initial display
+  displayProjects(projects);
+});
